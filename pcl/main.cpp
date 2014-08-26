@@ -7,42 +7,9 @@
 //
 
 #include <iostream>
-#include <vector>
-#include <set>
-#include <string>
-#include <algorithm>
-#include <queue>
-#include <map>
+#include "polynome.h"
 
 using namespace std;
-
-typedef pair<int, int> term;
-typedef vector<term> polynomial;
-
-class Polynomial{
-private:
-    polynomial poly;
-    
-public:
-    polynomial operator + (const polynomial x) {
-        polynomial ret;
-        return ret;
-    }
-    
-    polynomial operator - (const polynomial x) {
-        polynomial ret;
-        return ret;
-    }
-    
-    polynomial operator * (const polynomial x) {
-        polynomial ret;
-        return ret;
-    }
-    
-    void display() {
-        
-    }
-};
 
 const int MN = 10010;
 

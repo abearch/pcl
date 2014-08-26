@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B19F5A419AB5911001DC28D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B19F5A319AB5911001DC28D /* main.cpp */; };
+		3BD84DC819AB914300F36A10 /* polynome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BD84DC719AB914200F36A10 /* polynome.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		3B19F5A019AB5911001DC28D /* pcl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pcl; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B19F5A319AB5911001DC28D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3BD84DC619AB912300F36A10 /* polynome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = polynome.h; sourceTree = "<group>"; };
+		3BD84DC719AB914200F36A10 /* polynome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = polynome.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				3B19F5A319AB5911001DC28D /* main.cpp */,
+				3BD84DC619AB912300F36A10 /* polynome.h */,
+				3BD84DC719AB914200F36A10 /* polynome.cpp */,
 			);
 			path = pcl;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD84DC819AB914300F36A10 /* polynome.cpp in Sources */,
 				3B19F5A419AB5911001DC28D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +238,7 @@
 				3B19F5A919AB5911001DC28D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
