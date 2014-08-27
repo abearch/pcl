@@ -11,6 +11,8 @@
 
 #include <vector>
 #include <algorithm>
+#include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -22,10 +24,11 @@ private:
     polynomial poly;
     
 public:
-    polynomial operator + (const polynomial &x);
-    polynomial operator - (const polynomial &x);
-    polynomial operator * (const polynomial &x);
+    Polynomial operator + (const Polynomial &x);
+    Polynomial operator - (const Polynomial &x);
+    Polynomial operator * (const Polynomial &x);
     void display();
+    void push(term &p);
 };
 
 

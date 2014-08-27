@@ -11,8 +11,15 @@
 
 using namespace std;
 
-const int MN = 10010;
-
 int main(int argc, const char * argv[]) {
+    Polynomial c;
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        term p;
+        cin >> p.first >> p.second;
+        c.push(p);
+    }
+    c.display();
     return 0;
 }
