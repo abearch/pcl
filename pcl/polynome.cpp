@@ -21,6 +21,9 @@ Polynomial Polynomial::operator + (const Polynomial &x) {
             px++;
         } else {
             pr.first = poly[ph].first + x.poly[px].first;
+            pr.second = poly[ph].second;
+            if (pr.first != 0)
+                ret.poly.push_back(pr);
             ph++;
             px++;
         }
@@ -36,6 +39,34 @@ Polynomial Polynomial::operator + (const Polynomial &x) {
 
 Polynomial Polynomial::operator - (const Polynomial &x) {
     Polynomial ret;
+    int ph = 0, px = 0;
+    term pr;
+    while (ph < poly.size() && px < x.poly.size()) {
+        if (poly[ph].second > x.poly[px].second) {
+            ret.poly.push_back(poly[ph]);
+            ph++;
+        } else if (poly[ph].second < x.poly[px].second) {
+            pr.first = 0 - x.poly[px].first;
+            pr.second = x.poly[px].second;
+            ret.poly.push_back(pr);
+            px++;
+        } else {
+            pr.first = poly[ph].first - x.poly[px].first;
+            pr.second = poly[ph].second;
+            if (pr.first != 0)
+                ret.poly.push_back(pr);
+            ph++;
+            px++;
+        }
+    }
+    for (int i = ph; i < poly.size(); i++) {
+        ret.poly.push_back(poly[i]);
+    }
+    for (int i = px; i < x.poly.size(); i++) {
+        pr.first = 0 - x.poly[i].first;
+        pr.second = x.poly[px].second;
+        ret.poly.push_back(pr);
+    }
     return ret;
 }
 

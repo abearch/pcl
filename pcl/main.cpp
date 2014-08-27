@@ -12,14 +12,23 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    Polynomial c;
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++) {
+    Polynomial a, b, c;
+    int n1, n2;
+    cin >> n1;
+    for (int i = 0; i < n1; i++) {
         term p;
         cin >> p.first >> p.second;
-        c.push(p);
+        a.push(p);
     }
+    cin >> n2;
+    for (int i = 0; i < n2; i++) {
+        term p;
+        cin >> p.first >> p.second;
+        b.push(p);
+    }
+    c = a + b;
+    c.display();
+    c = a - b;
     c.display();
     return 0;
 }
