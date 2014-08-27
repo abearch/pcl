@@ -10,6 +10,27 @@
 
 Polynomial Polynomial::operator + (const Polynomial &x) {
     Polynomial ret;
+    int ph = 0, px = 0;
+    term pr;
+    while (ph < poly.size() && px < x.poly.size()) {
+        if (poly[ph].second > x.poly[px].second) {
+            ret.poly.push_back(poly[ph]);
+            ph++;
+        } else if (poly[ph].second < x.poly[px].second) {
+            ret.poly.push_back(x.poly[px]);
+            px++;
+        } else {
+            pr.first = poly[ph].first + x.poly[px].first;
+            ph++;
+            px++;
+        }
+    }
+    for (int i = ph; i < poly.size(); i++) {
+        ret.poly.push_back(poly[i]);
+    }
+    for (int i = px; i < x.poly.size(); i++) {
+        ret.poly.push_back(x.poly[i]);
+    }
     return ret;
 }
 
