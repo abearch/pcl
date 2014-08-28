@@ -37,17 +37,46 @@ int GetOrder() {
     return ret;
 }
 
+void Exit() {
+    cout << endl;
+    cout << "Thank you for your using. sa yo na la." << endl;
+}
+
 int Execute(int order) {
     int ret;
     switch (order) {
-        case 0:
-            ShowMenu();
+        case 1:
+            break;
+            
+        case 2:
+            break;
+         
+        case 3:
+            break;
+            
+        case 4:
+            break;
+            
+        case 5:
+            break;
+            
+        case 6:
+            break;
+            
+        case 7:
+            break;
+            
+        case 8:
             break;
             
         case 9:
-            cout << "Byebye ~~~~ " << endl;
+            Exit();
             return 0;
             
+        case 0:
+            ShowMenu();
+            break;
+        
         default:
             break;
     }

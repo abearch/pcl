@@ -13,11 +13,11 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
+    
     int order, feedback;
     Welcome();
     ShowMenu();
     do {
-        
         order = GetOrder();
         feedback = Execute(order);
     } while (feedback);
@@ -40,6 +40,8 @@ int main(int argc, const char * argv[]) {
     c.display();
     c = a - b;
     c.display();
-    */
+    c = a * b;
+    c.display();
+     */
     return 0;
 }

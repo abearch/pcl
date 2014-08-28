@@ -27,8 +27,11 @@ public:
     Polynomial operator + (const Polynomial &x);
     Polynomial operator - (const Polynomial &x);
     Polynomial operator * (const Polynomial &x);
+    bool operator == (const Polynomial &x);
+    int getValue(int);
     void display();
     void push(term &p);
+    Polynomial Derive();
 };
 
 

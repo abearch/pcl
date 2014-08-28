@@ -72,10 +72,40 @@ Polynomial Polynomial::operator - (const Polynomial &x) {
 
 Polynomial Polynomial::operator * (const Polynomial &x) {
     Polynomial ret;
-    int ph = 0, px = 0;
-    
     term pr;
-    
+    for (int i = 0; i < poly.size(); i++) {
+        Polynomial tmp;
+        for (int j = 0; j < x.poly.size(); j++) {
+            pr.first = poly[i].first * x.poly[j].first;
+            pr.second = poly[i].second + x.poly[j].second;
+            tmp.push(pr);
+        }
+        ret = ret + tmp;
+    }
+    return ret;
+}
+
+bool Polynomial::operator == (const Polynomial &x) {
+    bool ret = true;
+    if (poly.size() != x.poly.size()) {
+        ret = false;
+    } else {
+        for (int i = 0; i < poly.size(); i++) {
+            if ((poly[i].first != x.poly[i].first) ||
+                        (poly[i].second) != x.poly[i].second) {
+                ret = false;
+                break;
+            }
+        }
+    }
+    return ret;
+}
+
+int Polynomial::getValue(int x) {
+    int ret;
+    for (int i = 0; i < poly.size(); i++) {
+        ret += (int)pow(double(x), double(poly[i].second));
+    }
     return ret;
 }
 
@@ -92,8 +122,9 @@ void Polynomial::display() {
         cout << 0 << endl;
         return;
     }
-    if (poly[0].first == -1) {
-        cout << '-';
+    if (abs(poly[0].first) == 1) {
+        if (poly[0].first == -1)
+            cout << '-';
     } else {
         cout << poly[0].first;
     }
@@ -116,3 +147,18 @@ void Polynomial::display() {
 void Polynomial::push(term &p) {
     poly.push_back(p);
 }
+
+Polynomial Polynomial::Derive() {
+    Polynomial ret;
+    term pr;
+    for (int i = 0; i < poly.size(); i++) {
+        if (poly[i].second == 0)
+            continue;
+        pr.first = poly[i].first * poly[i].second;
+        pr.second = poly[i].second - 1;
+        ret.poly.push_back(pr);
+    }
+    return ret;
+}
+
+

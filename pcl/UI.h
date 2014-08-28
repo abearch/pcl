@@ -16,6 +16,7 @@ using namespace std;
 
 void Welcome();
 void ShowMenu();
+void Exit();
 int GetOrder();
 int Execute(int);
 
