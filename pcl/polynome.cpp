@@ -72,6 +72,10 @@ Polynomial Polynomial::operator - (const Polynomial &x) {
 
 Polynomial Polynomial::operator * (const Polynomial &x) {
     Polynomial ret;
+    int ph = 0, px = 0;
+    
+    term pr;
+    
     return ret;
 }
 

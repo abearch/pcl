@@ -8,10 +8,20 @@
 
 #include <iostream>
 #include "polynome.h"
+#include "UI.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
+    int order, feedback;
+    Welcome();
+    ShowMenu();
+    do {
+        
+        order = GetOrder();
+        feedback = Execute(order);
+    } while (feedback);
+    /*
     Polynomial a, b, c;
     int n1, n2;
     cin >> n1;
@@ -30,5 +40,6 @@ int main(int argc, const char * argv[]) {
     c.display();
     c = a - b;
     c.display();
+    */
     return 0;
 }

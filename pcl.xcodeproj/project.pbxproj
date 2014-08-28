@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B19F5A419AB5911001DC28D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B19F5A319AB5911001DC28D /* main.cpp */; };
 		3BD84DC819AB914300F36A10 /* polynome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BD84DC719AB914200F36A10 /* polynome.cpp */; };
+		3BE8221419ADFF3500E78A8E /* UI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8221219ADFF3500E78A8E /* UI.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		3B19F5A319AB5911001DC28D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3BD84DC619AB912300F36A10 /* polynome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = polynome.h; sourceTree = "<group>"; };
 		3BD84DC719AB914200F36A10 /* polynome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = polynome.cpp; sourceTree = "<group>"; };
+		3BE8221219ADFF3500E78A8E /* UI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UI.cpp; sourceTree = "<group>"; };
+		3BE8221319ADFF3500E78A8E /* UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				3B19F5A319AB5911001DC28D /* main.cpp */,
+				3BE8221319ADFF3500E78A8E /* UI.h */,
+				3BE8221219ADFF3500E78A8E /* UI.cpp */,
 				3BD84DC619AB912300F36A10 /* polynome.h */,
 				3BD84DC719AB914200F36A10 /* polynome.cpp */,
 			);
@@ -124,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BD84DC819AB914300F36A10 /* polynome.cpp in Sources */,
+				3BE8221419ADFF3500E78A8E /* UI.cpp in Sources */,
 				3B19F5A419AB5911001DC28D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
