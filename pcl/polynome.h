@@ -29,6 +29,8 @@ public:
     Polynomial operator * (const Polynomial &x);
     bool operator == (const Polynomial &x);
     int getValue(int);
+    term getTerm(int);
+    int getSize();
     void display();
     void push(term &p);
     Polynomial Derive();

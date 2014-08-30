@@ -161,4 +161,11 @@ Polynomial Polynomial::Derive() {
     return ret;
 }
 
+term Polynomial::getTerm(int x) {
+    return poly[x];
+}
+
+int Polynomial::getSize() {
+    return poly.size();
+}
 

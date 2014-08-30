@@ -9,15 +9,14 @@
 #include "UI.h"
 
 void Welcome() {
-    cout << "Polynomial Caulculator 0.0.6" << endl;
-    cout << "Copyright (c) 2014 silly and chenfei." << endl;
-    cout << "All rights reserved." << endl;
+    cout << "Polynomial Caulculator 0.0.7" << endl;
+    cout << "Copyright (c) 2014 silly and chenfei. All rights reserved." << endl;
+    cout << "You can type \"help\" for more information, \"exit\" to Exit." << endl;
     cout << endl;
 }
 
-void ShowMenu() {
-    cout << "             Menu" << endl;
-    cout << endl;
+void showMenu() {
+    cout << "             Menu" << endl << endl;
     cout << "    1.Input a Polynomial." << endl;
     cout << "    2.Display Polynomials." << endl;
     cout << "    3.Polynome Addition." << endl;
@@ -28,57 +27,23 @@ void ShowMenu() {
     cout << "    8.Get value." << endl;
     cout << "    9.Exit." << endl;
     cout << "    0.Show Menu." << endl;
-    cout << ">>> ";
+    cout << endl << "Please enter the No. of what you want to do." << endl;
 }
 
-int GetOrder() {
-    int ret;
-    cin >> ret;
-    return ret;
+void Cutline() {
+    cout << endl << "/*********************************/ " << endl;
 }
 
-void Exit() {
-    cout << endl;
-    cout << "Thank you for your using. sa yo na la." << endl;
-}
-
-int Execute(int order) {
-    int ret;
-    switch (order) {
-        case 1:
-            break;
-            
-        case 2:
-            break;
-         
-        case 3:
-            break;
-            
-        case 4:
-            break;
-            
-        case 5:
-            break;
-            
-        case 6:
-            break;
-            
-        case 7:
-            break;
-            
-        case 8:
-            break;
-            
-        case 9:
-            Exit();
-            return 0;
-            
-        case 0:
-            ShowMenu();
-            break;
-        
-        default:
-            break;
-    }
-    return ret;
+void help() {
+    cout << "        PCL main help file      " << endl << endl;
+    cout << "aasdjfhlaksfhakjfhlakjfhalkjfhalksj" << endl;
+    cout << "aasdjfhlaksfhakjfhlakjfhalkjfhalksj" << endl;
+    cout << "aasdjfhlaksfhakjfhlakjfhalkjfhalksj" << endl;
+    cout << "aasdjfhlaksfhakjfhlakjfhalkjfhalksj" << endl;
+    cout << "aasdjfhlaksfhakjfhlakjfhalkjfhalksj" << endl;
+    cout << "aasdjfhlaksfhakjfhlakjfhalkjfhalksj" << endl;
+    cout << "aasdjfhlaksfhakjfhlakjfhalkjfhalksj" << endl;
+    cout << "aasdjfhlaksfhakjfhlakjfhalkjfhalksj" << endl;
+    cout << "aasdjfhlaksfhakjfhlakjfhalkjfhalksj" << endl;
+    cout << "aasdjfhlaksfhakjfhlakjfhalkjfhalksj" << endl;
 }

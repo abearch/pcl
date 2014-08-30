@@ -15,9 +15,8 @@
 using namespace std;
 
 void Welcome();
-void ShowMenu();
-void Exit();
-int GetOrder();
-int Execute(int);
+void showMenu();
+void Cutline();
+void help();
 
 #endif /* defined(__pcl__UI__) */
