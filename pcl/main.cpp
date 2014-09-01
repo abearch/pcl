@@ -72,35 +72,117 @@ int getOrder() {
 
 bool isPoly(string input) {
     bool ret;
-    return ret;
+    return ret = false;
 }
 
-Polynomial toPoly(string input) {
-    Polynomial ret;
-    term pr;
+
+//------------------------------
+term getPiar(string s) {
+    term ret;
     
     return ret;
 }
 
-Polynomial getPoly() {
-    Polynomial ret;
-    string input, tmp;
-    bool flag;
-    do {
-        cout << "Please enter a polynomial" << endl;
-        getline(cin, input);
-        flag = isPoly(input);
-        if (flag) {
-            for (int i = 0; i < input.size(); i++) {
-                if (input[i] == ' ')
-                    continue;
-                tmp += input[i];
-            }
-            ret = toPoly(tmp);
-            polyList[tmp[0]] = ret;
+int addPoly(string input) {
+    string tmp, pterm;
+    term pr;
+    Polynomial pol;
+    
+    //Check the input elements in char set or not, and get the input without space
+    for (int i = 0; i < input.size(); i++) {
+        if (input[i] == ' ')
+            continue;
+        if ((input[i] < 'a' || input[i] > 'z') && input[i] != ',' &&
+                (input[i] < 0 || input[i] > '9') && input[i] != '-' &&
+                input[i] != '(' && input[i] != ')' && input[i] != '=') {
+            cout << tmp << endl;
+            return 1;
         }
-    } while (!flag);
-    return ret;
+        tmp += input[i];
+    }
+    
+    //check if the input at least with one term
+    if (tmp[0] < 'a' || tmp[0] > 'z' || tmp[1] != '=' || tmp.size() < 7) {
+        return 2;
+    }
+    
+    //
+    int pos = 2;
+    while (pos < tmp.size()) {
+        if (tmp[pos] != '(') {
+            return 3;
+        } else {
+            pos++;
+            bool isNega;
+            int ft = 0, sd = 0;
+            if (pos < tmp.size()) {
+                isNega = false;
+                if (tmp[pos] == '-') {
+                    isNega = true;
+                    pos++;
+                }
+                while (tmp[pos] >= '0' && tmp[pos] <= '9' && pos < tmp.size()) {
+                    ft = ft * 10 + (tmp[pos] - '0');
+                    pos++;
+                }
+                if (isNega) {
+                    ft = ft * -1;
+                }
+                if (pos < tmp.size()) {
+                    if (tmp[pos] != ',') {
+                        return 4;
+                    } else {
+                        pos++;
+                    }
+                } else {
+                    return 5;
+                }
+                if (tmp[pos] == '-') {
+                    return 7;
+                }
+                while (tmp[pos] >= '0' && tmp[pos] <= '9' && pos < tmp.size()) {
+                    sd = sd * 10 + (tmp[pos] - '0');
+                    pos++;
+                }
+                if (pos < tmp.size()) {
+                    if (tmp[pos] != ')') {
+                        return 6;
+                    } else {
+                        pos++;
+                    }
+                } else {
+                    return 7;
+                }
+            } else {
+                return 8;
+            }
+            pr.first = ft;
+            pr.second = sd;
+            pol.push(pr);
+        }
+    }
+    for (int i = 1; i < pol.getSize(); i++) {
+        if (pol.getTerm(i-1).second < pol.getTerm(i).second)
+            return 9;
+    }
+    polyList[tmp[0]] = pol;
+    pol.display();
+    return 0;
+}
+
+void getPoly() {
+    string input;
+    int flag;
+    cout << "Please enter a polynomial with the correct format" << endl;
+    do {
+        cout << ">>> ";
+        getline(cin, input);
+        flag = addPoly(input);
+        if (flag != 0) {
+            cout << "Invalid input, please try again." << endl;
+            cout << "Exit code " << flag << endl;
+        }
+    } while (flag != 0);
 }
 
 
