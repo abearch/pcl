@@ -4,7 +4,7 @@
 //
 //  Created by silly on 8/25/14.
 //  Copyright (c) 2014 silly. All rights reserved.
-//cgfdkhgfk
+//
 
 #include <iostream>
 #include <cstdio>
@@ -17,6 +17,8 @@
 #include "UI.h"
 
 using namespace std;
+
+Polynomial pol;
 
 map<char, Polynomial> polyList;
 
@@ -83,6 +85,108 @@ term getPiar(string s) {
     return ret;
 }
 
+pair<int, int> getPair(string s)
+{
+    pair<int, int> ans;
+    int n = s.size();
+    int i = 0;
+    bool flag, fl = true;
+    while (i < n)
+    {
+        if ('0' <= s[i] && s[i] <= '9')
+        {
+            int k = 0;
+            int j = i;
+            if (s[i-1] == '-')
+                flag = false;
+            else
+                flag = true;
+            while (j < n)
+            {
+                if ('0' <= s[j] && s[j] <= '9')
+                    k = k*10 + s[j] - '0';
+                else break;
+                j ++;
+            }
+            if (fl == true)
+            {
+                if (flag == true)
+                    ans.first = k;
+                else ans.first = -k;
+                fl = false;
+            }
+            else
+            {
+                if (flag == true)
+                    ans.second = k;
+                else ans.second = -k;
+            }
+            i = j;
+        }
+        else i ++;
+    }
+    return ans;
+}
+
+polynomial getPoly(string s)
+{
+    int n = s.size();
+    polynomial ans;
+    string st;
+    for (int i = 0; i < n; i ++)
+    {
+        st = "";
+        while (s[i] != ')')
+        {
+            st += s[i];
+            i ++;
+        }
+        st += s[i];
+        i ++;
+        ans.push_back(getPair(st));
+    }
+    return ans;
+}
+
+bool check(char c)
+{
+    if ('0' <= c <= '9' || c == '-' || c == '(' || c == ')' || c == ',')
+        return true;
+    return false;
+}
+
+int addPoly(string s)
+{
+    polynomial ans;
+    string tmp;
+    char unknown;
+    bool fl = true, fl2 = true;
+    tmp = "";
+    
+    for (int i = 0; i < s.size(); i ++)
+   {
+        if (fl == true && ('a' <= s[i] <= 'z' || 'A' <= s[i] <= 'Z'))
+        {
+            fl = false;
+            unknown = s[i];
+        }
+        else if (fl == true) return 0;
+       
+        if (fl == false && fl2 == true && s[i] == '=')
+        {
+            fl2 = false;
+        }
+        else if (fl == false && fl2 == true) return 0;
+       
+        if (check(s[i]) == true && fl == false && fl2 == false) tmp += s[i];
+    }
+    
+    ans = getPoly(tmp);
+    pol.setPoly(ans);
+    return 1;
+}
+
+/*
 int addPoly(string input) {
     string tmp, pterm;
     term pr;
@@ -169,7 +273,8 @@ int addPoly(string input) {
     pol.display();
     return 0;
 }
-
+*/
+ 
 void getPoly() {
     string input;
     int flag;

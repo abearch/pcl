@@ -34,6 +34,7 @@ public:
     void display();
     void push(term &p);
     Polynomial Derive();
+    void setPoly(polynomial newPoly);
 };
 
 

@@ -169,3 +169,11 @@ int Polynomial::getSize() {
     return poly.size();
 }
 
+void Polynomial::setPoly(polynomial newPoly)
+{
+    for (vector<pair<int, int> >::iterator it = newPoly.begin(); it != newPoly.end(); it ++)
+    {
+        poly.push_back(*it);
+    }
+}
+
